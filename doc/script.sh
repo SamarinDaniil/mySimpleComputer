@@ -1,0 +1,13 @@
+#!/bin/bash
+echo -e "\033[H\033[2J"
+echo -e "\033[0;31m"
+echo -e "\033[40m"
+echo -e -n "\033[5;10H"
+echo -e -n "Самарин Даниил\n"
+echo -e "\033[0;32m"
+echo -e "\033[47m"
+echo -e -n "\033[6;8H"
+echo -e -n "ИП-115\n"
+echo -e "\033[0;39m"
+echo -e "\033[49m"
+echo -e -n "\033[10;1H"

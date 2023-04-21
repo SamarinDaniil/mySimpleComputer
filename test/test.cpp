@@ -1,4 +1,5 @@
 #include "../src/libComputer/mySimpleComputer.h"
+#include "../src/libComputer/myTerm.h"
 #include <cstdio>
 #include <ctest.h>
 
@@ -68,14 +69,14 @@ CTEST(check_data, Check_Wrong_address_sc_memoryLoad)
 CTEST(check_data, True_Flag_sc_regSet)
 {
     sc_regInit();
-    int check = sc_regSet(Flag_Wrong_Flag,1);
+    int check = sc_regSet(Flag_Wrong_Flag, 1);
 
     ASSERT_EQUAL(0, check);
 }
 CTEST(check_data, Wrong_Flag_sc_regSet)
 {
     sc_regInit();
-    int check = sc_regSet(22,1);
+    int check = sc_regSet(22, 1);
 
     ASSERT_EQUAL(-7, check);
 }
@@ -118,16 +119,30 @@ CTEST(check_data, Wrong_Command_sc_commandEncode)
 }
 CTEST(check_data, True_Operand_and_Command_sc_commandDecode)
 {
-    int a = 0, b =0, c = 0;
-    int check = sc_commandDecode(c,&a, &b);
+    int a = 0, b = 0, c = 0;
+    int check = sc_commandDecode(c, &a, &b);
 
     ASSERT_EQUAL(0, check);
 }
 CTEST(check_data, Wrong_Command_sc_commandDecode)
 {
-    int a = 0, b =0, c = 0;
-    bit_set(c,14);
+    int a = 0, b = 0, c = 0;
+    bit_set(c, 14);
     int check = sc_commandDecode(c, &b, &a);
 
     ASSERT_EQUAL(-5, check);
+}
+
+CTEST(check_data, True_bgColor)
+{
+    int check = mt_setbgcolor(RED);
+    printf(RESET);
+    ASSERT_EQUAL(0, check);
+}
+
+CTEST(check_data, True_fgColor)
+{
+    int check = mt_setfgcolor(RED);
+    printf(RESET);
+    ASSERT_EQUAL(0, check);
 }

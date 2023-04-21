@@ -23,23 +23,17 @@
 #define Error_Wrong_Flag -7
 #define Error_Wrong_Value -8
 
-#define forn(X, Y) for(int i = X; i < Y; i++)
-#define bit_set(X, Y) X = X | (1 << (Y - 1)) 
-#define bit_del(X, Y) X = X & (~(1 << (Y - 1))) 
+#define forn(X, Y) for (int i = X; i < Y; i++)
+#define bit_set(X, Y) X = X | (1 << (Y - 1))
+#define bit_del(X, Y) X = X & (~(1 << (Y - 1)))
 #define bit_get(X, Y) X >> (Y - 1) & 0x1
 
 static int sc_memory[MEMORY_SIZE];
 static int sc_registr;
 
-const int Operation[38] = {
-			10, 11,
-			20, 21,
-			30, 31, 32, 33,
-			40, 41, 42, 43,
-			51, 52, 53, 54, 55, 56, 57, 58, 59,
-			60, 61, 62, 63, 64, 65, 66, 67, 68, 69,
-			70, 71, 72, 73, 74, 75, 76
-			};
+const int Operation[38] = {10, 11, 20, 21, 30, 31, 32, 33, 40, 41, 42, 43, 51,
+                           52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64,
+                           65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76};
 
 int sc_memoryInit();
 int sc_memorySet(int address, int value);
